@@ -1,36 +1,21 @@
 html, body {
   margin: 0;
 }
-
-.main-head {
-  grid-area: header;
+html{
+  overflow-y:scroll;
 }
-
-.content {
-  grid-area: content;
-  min-height:500px;
-}
-
-.main-nav {
-  grid-area: nav;
-}
-
-.side {
-  grid-area: sidebar;
-}
-
-.main-footer {
-  grid-area: footer;
-}
-
-.main-layout {
+.page-content{
   margin-right: auto;
   margin-left: auto;
   max-width:1366px;
+}
+
+.main-layout {
+  margin-left:0.5em;
+  margin-right:0.5em;
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 1em;
   grid-template-areas:
-    "header"
     "nav"
     "content"
     "sidebar"
@@ -41,7 +26,6 @@ html, body {
   .main-layout {
     grid-template-columns: 3fr 1fr;
     grid-template-areas:
-      "header  header"
       "nav     nav"
       "content sidebar"
       "footer  footer";
@@ -60,15 +44,36 @@ html, body {
   .main-layout {
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-areas:
-    "header header  header"
-    "nav    content sidebar"
-    "nav    content sidebar"
-    "footer footer  footer"
+      "nav    content sidebar"
+      "nav    content sidebar"
+      "footer footer  footer"
   }
   nav ul {
     flex-direction: column;
     align-items: start;
   }
+}
+
+.main-head {
+  grid-area: header;
+}
+
+.content {
+  grid-area: content;
+  min-height:500px;
+}
+
+.main-nav {
+  padding-top:0.5em;
+  grid-area: nav;
+}
+
+.side {
+  grid-area: sidebar;
+}
+
+.main-footer {
+  grid-area: footer;
 }
 
 
