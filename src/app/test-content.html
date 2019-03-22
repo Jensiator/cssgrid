@@ -1,4 +1,79 @@
 <h1>Main article area</h1>
-<p>In this layout, we display the areas in source order for any screen less that 500 pixels wide. We go to a two
+<p style="background-color:#c7e3ff;padding:1em">In this layout, we display the areas in source order for any screen less
+  that 500 pixels wide. We go to a two
   column layout, and then to a three column layout by redefining the grid, and the placement of items on the
   grid.</p>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      Person details
+    </div>
+    <div>
+      <button class="btn" *ngIf="!isPersonEdit" (click)="onEditPerson()">Edit</button>
+    </div>
+  </div>
+  <div class="card-body">
+    <ng-container *ngIf="!isPersonEdit">
+      <div class="grid">
+        <div class="col-md-6">
+          <div class="desc">Name</div>
+          <div>Jens</div>
+        </div>
+        <div class="col-md-6">
+          <div class="desc">Gender</div>
+          <div>Male</div>
+        </div>
+        <div class="col-md-6">
+          <div class="desc">
+            Address
+          </div>
+          <address>
+            Nåntunaback 53
+            75759 Uppsala
+            Sverige
+          </address>
+        </div>
+        <div class="col-md-6">
+          <div class="desc">Eye color</div>
+          <div>Blue</div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="isPersonEdit">
+      <form>
+        <div class="grid">
+          <div class="col-md-6">
+            <label>Name</label>
+            <div>
+              <input type="text" placeholder="Jens"/>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label>Gender</label>
+            <div>
+              <input type="text" placeholder="Male"/>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label>Address</label>
+            <div>
+              <input type="text" placeholder="Nåntunaback 53 75759 Uppsala Sverige"/>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label>Eye color</label>
+            <div>
+              <input type="text" placeholder="Blue"/>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <button class="btn" type="submit" (click)="onSubmit()">Save</button>
+            <button class="btn" type="button" (click)="onCancel()">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </ng-container>
+
+  </div>
+</div>
