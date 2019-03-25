@@ -1,11 +1,16 @@
-.grid {
+.row {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 0.5em;
-  
+  gap: 1em;
 }
 .col-md-6 {
   grid-column: span 12;
+  .disp{
+    line-height:$line-height;
+  }
+  .desc{
+    font-weight: bold;
+  }
 }
 @media (min-width: 700px) {
   .col-md-6 {

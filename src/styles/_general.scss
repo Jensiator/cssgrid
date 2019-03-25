@@ -1,10 +1,15 @@
+// * {
+//   margin: 0;
+//   padding: 0;
+// }
+
 html, body {
   margin: 0;
 }
 html{
   overflow-y:scroll;
+  // font-family:"Arial Unicode MS","Lucida Sans Unicode";
 }
-
 
 h1 {
   margin-top: 0;
@@ -12,7 +17,5 @@ h1 {
   font-size: 2em;
 }
 
-.desc{
-  font-weight: bold;
-}
+
 

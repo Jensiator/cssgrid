@@ -1,5 +1,5 @@
 <h1>Main article area</h1>
-<p style="background-color:#c7e3ff;padding:1em">In this layout, we display the areas in source order for any screen less
+ <p >In this layout, we display the areas in source order for any screen less
   that 500 pixels wide. We go to a two
   column layout, and then to a three column layout by redefining the grid, and the placement of items on the
   grid.</p>
@@ -15,20 +15,20 @@
   </div>
   <div class="card-body">
     <ng-container *ngIf="!isPersonEdit">
-      <div class="grid">
+      <div class="row">
         <div class="col-md-6">
           <div class="desc">Name</div>
-          <div>Jens</div>
+          <div class="disp">Jens</div>
         </div>
         <div class="col-md-6">
           <div class="desc">Gender</div>
-          <div>Male</div>
+          <div class="disp">Male</div>
         </div>
         <div class="col-md-6">
           <div class="desc">
             Address
           </div>
-          <address>
+          <address class="disp">
             Nåntunaback 53
             75759 Uppsala
             Sverige
@@ -36,36 +36,28 @@
         </div>
         <div class="col-md-6">
           <div class="desc">Eye color</div>
-          <div>Blue</div>
+          <div class="disp">Blue</div>
         </div>
       </div>
     </ng-container>
     <ng-container *ngIf="isPersonEdit">
       <form>
-        <div class="grid">
+        <div class="row">
           <div class="col-md-6">
             <label>Name</label>
-            <div>
-              <input type="text" placeholder="Jens"/>
-            </div>
+            <input class="form-control" type="text" placeholder="Jens"/>
           </div>
           <div class="col-md-6">
             <label>Gender</label>
-            <div>
-              <input type="text" placeholder="Male"/>
-            </div>
+            <input class="form-control"type="text" placeholder="Male"/>
           </div>
           <div class="col-md-6">
             <label>Address</label>
-            <div>
-              <input type="text" placeholder="Nåntunaback 53 75759 Uppsala Sverige"/>
-            </div>
+            <input class="form-control" type="text" placeholder="Nåntunaback 53 75759 Uppsala Sverige"/>
           </div>
           <div class="col-md-6">
             <label>Eye color</label>
-            <div>
-              <input type="text" placeholder="Blue"/>
-            </div>
+            <input class="form-control" type="text" placeholder="Blue"/>
           </div>
           <div class="col-md-6">
             <button class="btn" type="submit" (click)="onSubmit()">Save</button>
