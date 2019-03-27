@@ -1,5 +1,5 @@
 <h1>Main article area</h1>
- <p >In this layout, we display the areas in source order for any screen less
+<p>In this layout, we display the areas in source order for any screen less
   that 500 pixels wide. We go to a two
   column layout, and then to a three column layout by redefining the grid, and the placement of items on the
   grid.</p>
@@ -45,19 +45,19 @@
         <div class="row">
           <div class="col-md-6">
             <label>Name</label>
-            <input class="form-control" type="text" placeholder="Jens"/>
+            <input class="form-control" type="text" placeholder="Jens" />
           </div>
           <div class="col-md-6">
             <label>Gender</label>
-            <input class="form-control"type="text" placeholder="Male"/>
+            <input class="form-control" type="text" placeholder="Male" />
           </div>
           <div class="col-md-6">
             <label>Address</label>
-            <input class="form-control" type="text" placeholder="Nåntunaback 53 75759 Uppsala Sverige"/>
+            <input class="form-control" type="text" placeholder="Nåntunaback 53 75759 Uppsala Sverige" />
           </div>
           <div class="col-md-6">
             <label>Eye color</label>
-            <input class="form-control" type="text" placeholder="Blue"/>
+            <input class="form-control" type="text" placeholder="Blue" />
           </div>
           <div class="col-md-6">
             <button class="btn" type="submit" (click)="onSubmit()">Save</button>
@@ -66,6 +66,12 @@
         </div>
       </form>
     </ng-container>
-
   </div>
+  <button class="btn" type="button" (click)="openModal()">Open Modal 1</button>
 </div>
+
+<modal [id]="modalId">
+  <h1>A Custom Modal!</h1>
+  <p>Home page text: <input type="text" placeholder="fanta" /></p>
+  <button class="btn" type="button" (click)="closeModal();">Close</button>
+</modal>
