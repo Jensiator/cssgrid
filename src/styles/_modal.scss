@@ -1,45 +1,46 @@
 modal {
-    display: none;
+  display: none;
 
-    .modal {
-        /* modal container fixed across whole screen */
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+  .modal {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    overflow: auto; /* enables scrolling for tall modals */
 
-        /* z-index must be higher than .modal-background */
-        z-index: 1000;
-        
-        /* enables scrolling for tall modals */
-        overflow: auto;
-
-        .modal-body {
-            padding: 20px;
-            background: #fff;
-
-            /* margin exposes part of the modal background */
-            margin: 40px;
-        }
+    .modal-body {
+      padding: 20px;
+      background: #fff;
+      margin: 1em; /* margin exposes part of the modal background */
     }
 
-    .modal-background {
-        /* modal background fixed across whole screen */
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: #000;
-        opacity: 0.75;
-        
-        /* z-index must be below .modal and above everything else  */
-        z-index: 900;
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+        left: 25%;
+        transform: translate(-15%, -25%);
+       
     }
+    @media (max-width: $breakpoint-md) {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: none;
+    }
+  }
+
+  .modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.75;
+    z-index: 900;
+  }
 }
 
 body.modal-open {
-    /* body overflow is hidden to hide main scrollbar when modal window is open */
-    overflow: hidden;
+  overflow: hidden;
 }
