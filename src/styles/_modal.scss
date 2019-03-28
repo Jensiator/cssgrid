@@ -8,11 +8,10 @@ modal {
     transform: translate(-50%, -50%);
     z-index: 1000;
     overflow: auto; /* enables scrolling for tall modals */
-
     .modal-body {
       padding: 20px;
       background: #fff;
-      margin: 1em; /* margin exposes part of the modal background */
+      margin: 1em;
     }
 
     @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
