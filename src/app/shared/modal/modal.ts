@@ -4,7 +4,6 @@ import { ModalService } from './modal.service';
 @Component({
     selector: 'modal',
     templateUrl: 'modal.html'
-    // ,styleUrls: ['modal.scss']
 })
 export class ModalComponent implements OnInit, OnDestroy {
     @Input() id: string;
@@ -27,8 +26,8 @@ export class ModalComponent implements OnInit, OnDestroy {
         document.body.appendChild(this.element);
 
         // close modal on background click
-        this.element.addEventListener('click', function (e: any) {
-            if (e.target.className === 'modal') {
+        this.element.addEventListener('click', (e: any) => {
+            if (e.target.className === 'modal-background') {
                 modal.close();
             }
         });

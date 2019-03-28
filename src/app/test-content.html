@@ -71,7 +71,13 @@
 </div>
 
 <modal [id]="modalId">
-  <h1>A Custom Modal with long text!</h1>
-  <p>Home page text: <input type="text" placeholder="fanta" /></p>
-  <button class="btn" type="button" (click)="closeModal();">Close</button>
+  <div class="modal-header">
+    A Custom Modal with a long header text!
+  </div>
+  <div class="modal-body">
+    Home page text: <input type="text" placeholder="fanta" />
+  </div>
+  <div class="modal-footer">
+    <button class="btn" type="button" (click)="closeModal();">Close</button>
+  </div>
 </modal>

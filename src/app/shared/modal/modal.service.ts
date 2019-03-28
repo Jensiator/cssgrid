@@ -2,7 +2,6 @@ export class ModalService {
     private modals: any[] = [];
 
     add(modal: any) {
-        console.log("adding");
         this.modals.push(modal);
     }
 
@@ -12,7 +11,6 @@ export class ModalService {
 
     open(id: string) {
         const modal: any = this.modals.filter(x => x.id === id)[0];
-        console.log("opening:",modal);
         modal.open();
     }
 
