@@ -7,6 +7,7 @@ import { ModalService } from './shared/modal/modal.service';
 export class TestComponent {
   isPersonEdit: boolean;
   modalId = 'test-modal-1';
+  showModal: boolean;
   constructor(private modalService: ModalService) {
   }
 
@@ -20,7 +21,7 @@ export class TestComponent {
     this.isPersonEdit = false;
   }
   openModal() {
-     this.modalService.open(this.modalId);
+    this.modalService.open(this.modalId);
   }
   closeModal() {
     this.modalService.close(this.modalId);
