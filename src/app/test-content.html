@@ -67,25 +67,9 @@
       </form>
     </ng-container>
   </div>
-  <button class="btn" type="button" (click)="openModal()">Open Modal 1</button>
-  <button class="btn" type="button" (click)="showModal=!showModal">Open Modal 2</button>
+  <button class="btn" type="button" (click)="openModal()">Open Modal</button>
 </div>
-<app-modal
-    [show]="showModal"
-    [customClass]="'custom_modal_class'"
-    [closeCallback]="toggleModal">
-    <div class="modal-header">
-        A Custom Modal with a long header text!
-      </div>
-      <div class="modal-body">
-        Home page text: <input type="text" placeholder="fanta" />
-      </div>
-      <div class="modal-footer">
-        <button class="btn" type="button" (click)="closeModal();">Close</button>
-      </div>
-  </app-modal>
-
-<modal [id]="modalId">
+<modal (close)="onClose()">
   <div class="modal-header">
     A Custom Modal with a long header text!
   </div>
@@ -93,6 +77,6 @@
     Home page text: <input type="text" placeholder="fanta" />
   </div>
   <div class="modal-footer">
-    <button class="btn" type="button" (click)="closeModal();">Close</button>
+    <button class="btn" type="button" (click)="closeModal()">Close</button>
   </div>
 </modal>

@@ -6,8 +6,6 @@ import { ModalService } from './shared/modal/modal.service';
 })
 export class TestComponent {
   isPersonEdit: boolean;
-  modalId = 'test-modal-1';
-  showModal: boolean;
   constructor(private modalService: ModalService) {
   }
 
@@ -20,10 +18,13 @@ export class TestComponent {
   onSubmit(): void {
     this.isPersonEdit = false;
   }
-  openModal() {
-    this.modalService.open(this.modalId);
+  openModal(): void {
+    this.modalService.open();
   }
-  closeModal() {
-    this.modalService.close(this.modalId);
+  closeModal(): void {
+    this.modalService.close();
+  }
+  onClose(): void {
+  console.log('Callback');
   }
 }
