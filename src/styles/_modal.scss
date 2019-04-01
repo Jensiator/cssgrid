@@ -1,4 +1,4 @@
-modal {
+.modal-wrapper {
   display: none;
   .modal {
     position: fixed;
@@ -43,7 +43,6 @@ modal {
       transform: none;
     }
   }
-
   .modal-background {
     position: fixed;
     top: 0;

@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnDestroy, OnInit, SimpleChanges, Output, EventEmitter } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit, SimpleChanges, Output, EventEmitter, HostBinding } from '@angular/core';
 import { ModalService } from './modal.service';
 
 
@@ -8,12 +8,11 @@ import { ModalService } from './modal.service';
     templateUrl: 'modal.html'
 })
 export class ModalComponent implements OnInit, OnDestroy {
-
+    @HostBinding('class.modal-wrapper') true;
     @Output() close: EventEmitter<any> = new EventEmitter();
-
     private element: any;
 
-    constructor(private modalService: ModalService,private el: ElementRef) {
+    constructor(private modalService: ModalService, private el: ElementRef) {
         this.element = el.nativeElement;
     }
     ngOnInit(): void {
@@ -43,7 +42,7 @@ export class ModalComponent implements OnInit, OnDestroy {
     closeModal(): void {
         this.element.style.display = 'none';
         document.body.classList.remove('modal-open');
-        if(this.close){
+        if (this.close) {
             this.close.emit('closed:false');
         }
     }
