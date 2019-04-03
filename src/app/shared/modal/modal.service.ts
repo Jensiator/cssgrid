@@ -1,22 +1,23 @@
 import { ModalComponent } from './modal';
 
 export class ModalService {
-    private modal: ModalComponent;
+    private modals: any[] = [];
 
     add(modal: any) {
-        this.modal = modal;
+        this.modals.push(modal);
     }
 
-    remove() {
-        this.modal = null;
+    remove(id: string) {
+        this.modals = this.modals.filter(x => x.id !== id);
     }
 
-    open(): ModalComponent {
-        this.modal.open();
-        return this.modal;
+    open(id: string) {
+        const modal: any = this.modals.filter(x => x.id === id)[0];
+        modal.open();
     }
 
-    close() {
-        this.modal.closeModal();
+    close(id: string) {
+        const modal: any = this.modals.filter(x => x.id === id)[0];
+        modal.closeModal();
     }
 }

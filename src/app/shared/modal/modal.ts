@@ -1,15 +1,14 @@
 import { Component, ElementRef, Input, OnDestroy, OnInit, SimpleChanges, Output, EventEmitter, HostBinding } from '@angular/core';
 import { ModalService } from './modal.service';
-
-
-
 @Component({
-    selector: 'modal',
+    selector: '[modal]',
     templateUrl: 'modal.html'
 })
 export class ModalComponent implements OnInit, OnDestroy {
     @HostBinding('class.modal-wrapper') true;
     @Output() close: EventEmitter<any> = new EventEmitter();
+    // tslint:disable-next-line: no-input-rename
+    @Input('modal') id: string;
     private element: any;
 
     constructor(private modalService: ModalService, private el: ElementRef) {
@@ -32,7 +31,7 @@ export class ModalComponent implements OnInit, OnDestroy {
     // remove self from modal service when directive is destroyed
     ngOnDestroy(): void {
         this.element.remove();
-        this.modalService.remove();
+        this.modalService.remove(this.id);
     }
 
     open(): void {
