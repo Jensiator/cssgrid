@@ -6,6 +6,7 @@ import { ModalService } from './shared/modal/modal.service';
 })
 export class TestComponent {
   modalId = 'modal1';
+  confirmId = 'modal2';
   isPersonEdit: boolean;
   constructor(private modalService: ModalService) {
   }
@@ -24,6 +25,14 @@ export class TestComponent {
   }
   closeModal(): void {
     this.modalService.close(this.modalId);
+  }
+  openConfirm(): void {
+    const confirmModal = this.modalService.open(this.confirmId);
+    confirmModal.header = 'Hej på dere';
+    confirmModal.text = 'Säkert att du vill detta?';
+  }
+  onConfirm(userResponse: boolean): void {
+    console.log('On Confirm userresponse:', userResponse);
   }
   onClose(): void {
     console.log('Callback');

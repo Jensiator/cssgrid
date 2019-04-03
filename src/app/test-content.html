@@ -68,6 +68,7 @@
     </ng-container>
   </div>
   <button class="btn" type="button" (click)="openModal()">Open Modal</button>
+  <button class="btn" type="button" (click)="openConfirm()">Confirm</button>
 </div>
 <div (close)="onClose()" [modal]="modalId">
   <div class="modal-header">
@@ -79,4 +80,7 @@
   <div class="modal-footer">
     <button class="btn" type="button" (click)="closeModal()">Close</button>
   </div>
+</div>
+
+<div [confirm-modal]="confirmId" (response)="onConfirm($event)">
 </div>
