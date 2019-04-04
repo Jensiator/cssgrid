@@ -3,7 +3,7 @@
   grid-template-columns: repeat(12, 1fr);
   gap: 1em;
 }
-.col-md-6 {
+.col-6,.col-12 {
   grid-column: span 12;
   .disp{
     line-height:$line-height;
@@ -13,7 +13,7 @@
   }
 }
 @media (min-width: 500px) {
-  .col-md-6 {
+  .col-6 {
     grid-column: span 6;
   }
 }

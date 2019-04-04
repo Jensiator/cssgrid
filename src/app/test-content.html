@@ -10,21 +10,21 @@
       Person details
     </div>
     <div>
-      <button class="btn" *ngIf="!isPersonEdit" (click)="onEditPerson()">Edit</button>
+      <button class="btn btn-primary" *ngIf="!isPersonEdit" (click)="onEditPerson()">Edit</button>
     </div>
   </div>
   <div class="card-body">
     <ng-container *ngIf="!isPersonEdit">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-6">
           <div class="desc">Name</div>
           <div class="disp">Jens</div>
         </div>
-        <div class="col-md-6">
+        <div class="col-6">
           <div class="desc">Gender</div>
           <div class="disp">Male</div>
         </div>
-        <div class="col-md-6">
+        <div class="col-6">
           <div class="desc">
             Address
           </div>
@@ -34,41 +34,48 @@
             Sverige
           </address>
         </div>
-        <div class="col-md-6">
+        <div class="col-6">
           <div class="desc">Eye color</div>
           <div class="disp">Blue</div>
         </div>
       </div>
     </ng-container>
     <ng-container *ngIf="isPersonEdit">
-      <form>
+      <form [formGroup]="form">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-6">
             <label>Name</label>
             <input class="form-control" type="text" placeholder="Jens" />
           </div>
-          <div class="col-md-6">
+          <div class="col-6">
             <label>Gender</label>
-            <input class="form-control" type="text" placeholder="Male" />
+            <div class="checkbox-group">
+              <label class="btn btn-primary">
+                <input type="checkbox" formControlName="Gender"> Male
+              </label>
+              <label class="btn btn-primary" ngbButtonLabel>
+                <input type="checkbox" formControlName="Gender"> Female
+              </label>
+              <label class="btn btn-primary" ngbButtonLabel>
+                <input type="checkbox" formControlName="Gender"> Hen
+              </label>
+            </div>
           </div>
-          <div class="col-md-6">
-            <label>Address</label>
-            <input class="form-control" type="text" placeholder="Nåntunaback 53 75759 Uppsala Sverige" />
-          </div>
-          <div class="col-md-6">
+          <div class="col-6">
             <label>Eye color</label>
             <input class="form-control" type="text" placeholder="Blue" />
           </div>
-          <div class="col-md-6">
-            <button class="btn" type="submit" (click)="onSubmit()">Save</button>
-            <button class="btn" type="button" (click)="onCancel()">Cancel</button>
-          </div>
+          <div class="col-12">
+              <button class="btn btn-primary" type="submit" (click)="onSubmit()">Save</button>
+              <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+            </div>
         </div>
       </form>
+      <pre>{{form.value|json}}</pre>
     </ng-container>
   </div>
-  <button class="btn" type="button" (click)="openModal()">Open Modal</button>
-  <button class="btn" type="button" (click)="openConfirm()">Confirm</button>
+  <button class="btn btn-primary" type="button" (click)="openModal()">Open Modal</button>
+  <button class="btn btn-primary" type="button" (click)="openConfirm()">Confirm</button>
 </div>
 <div (close)="onClose()" [modal]="modalId">
   <div class="modal-header">
@@ -78,7 +85,7 @@
     Home page text: <input type="text" placeholder="fanta" />
   </div>
   <div class="modal-footer">
-    <button class="btn" type="button" (click)="closeModal()">Close</button>
+    <button class="btn btn-primary" type="button" (click)="closeModal()">Close</button>
   </div>
 </div>
 

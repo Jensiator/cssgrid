@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalService } from './shared/modal/modal.service';
+import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'test',
   templateUrl: 'test-content.html'
@@ -7,11 +8,15 @@ import { ModalService } from './shared/modal/modal.service';
 export class TestComponent {
   modalId = 'modal1';
   confirmId = 'modal2';
+  form:FormGroup;
   isPersonEdit: boolean;
   constructor(private modalService: ModalService) {
   }
 
   onEditPerson(): void {
+    this.form = new FormGroup({
+      Gender: new FormControl()
+    });
     this.isPersonEdit = true;
   }
   onCancel(): void {
