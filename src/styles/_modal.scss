@@ -2,21 +2,22 @@
   display: none;
   .modal {
     position: fixed;
+    min-width:250px;
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
     overflow: auto; /* enables scrolling for tall modals */
     .modal-content {
-      padding: 0.5em 1em;
+      padding: $modal-py $modal-px;
       background: #fff;
       margin: 1em;
       #close{
           position: absolute;
           top:0;
           right:0;
-          padding-top: 15px;
-          padding-right:24px;
+          padding-top: 0.5em;
+          padding-right:0.8em;
           cursor: pointer;
           font-size: 2rem;
           font-weight: 700;
@@ -59,7 +60,8 @@ body.modal-open {
   overflow: hidden;
 }
 .modal-header{
-    font-size: 1.5em;
+    font-size: 1.2em;
+    font-weight: bold;
     padding-right:1em;
 }
 .modal-body{
