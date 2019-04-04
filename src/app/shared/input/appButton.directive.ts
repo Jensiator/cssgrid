@@ -19,4 +19,13 @@ export class AppButtonDirective {
         this.renderer.removeClass(label, 'focus');
         return;
     }
+    @HostListener('click', ['$event']) onClick() {
+        const label = this.renderer.parentNode(this.element.nativeElement);
+        if (label.classList.contains('active')) {
+            this.renderer.removeClass(label, 'active');
+        } else {
+            this.renderer.addClass(label, 'active');
+        }
+        return;
+    }
 }
