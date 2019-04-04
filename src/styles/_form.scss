@@ -8,12 +8,14 @@ input {
   width: 100%;
   box-sizing: border-box;
 }
+
 input[type="text"]:focus {
   background-color: lighten($primary-color, 30%);
   &::placeholder {
     color: white;
   }
 }
+
 .form-control {
   display: block;
 }
@@ -23,5 +25,9 @@ input[type="text"]:focus {
     position: absolute;
     clip: rect(0, 0, 0, 0);
     pointer-events: none;
+  }
+  label.focus {
+    background-color: lighten($primary-color, 10%);
+    outline: none;
   }
 }

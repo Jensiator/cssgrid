@@ -45,25 +45,25 @@
         <div class="row">
           <div class="col-6">
             <label>Name</label>
-            <input class="form-control" type="text" placeholder="Jens" />
+            <input formControlName="name" class="form-control" type="text"/>
           </div>
           <div class="col-6">
             <label>Gender</label>
             <div class="checkbox-group">
               <label class="btn btn-primary">
-                <input type="checkbox" formControlName="Gender"> Male
+                <input appButton type="checkbox" formControlName="gender"> Male
               </label>
-              <label class="btn btn-primary" ngbButtonLabel>
-                <input type="checkbox" formControlName="Gender"> Female
+              <label class="btn btn-primary">
+                <input appButton type="checkbox" formControlName="gender"> Female
               </label>
-              <label class="btn btn-primary" ngbButtonLabel>
-                <input type="checkbox" formControlName="Gender"> Hen
+              <label class="btn btn-primary">
+                <input appButton type="checkbox" formControlName="gender"> Hen
               </label>
             </div>
           </div>
           <div class="col-6">
             <label>Eye color</label>
-            <input class="form-control" type="text" placeholder="Blue" />
+            <input formControlName="eyeColor" class="form-control" type="text" placeholder="Pick color" />
           </div>
           <div class="col-12">
               <button class="btn btn-primary mr-3" type="submit" (click)="onSubmit()">Save</button>

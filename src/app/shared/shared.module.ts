@@ -4,6 +4,7 @@ import { ModalComponent } from './modal/modal';
 import { ModalService } from './modal/modal.service';
 import { ConfirmModal } from './modal/confirm.modal';
 import {ReactiveFormsModule} from '@angular/forms';
+import { AppButtonDirective } from './input/appButton.directive';
 @NgModule({
     imports: [
         CommonModule,
@@ -11,12 +12,14 @@ import {ReactiveFormsModule} from '@angular/forms';
     ],
     declarations: [
         ModalComponent,
-        ConfirmModal
+        ConfirmModal,
+        AppButtonDirective
     ],
     exports: [
         ModalComponent,
         ConfirmModal,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AppButtonDirective
     ],
     providers: [ModalService]
 })

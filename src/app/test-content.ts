@@ -8,14 +8,16 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class TestComponent {
   modalId = 'modal1';
   confirmId = 'modal2';
-  form:FormGroup;
+  form: FormGroup;
   isPersonEdit: boolean;
   constructor(private modalService: ModalService) {
   }
 
   onEditPerson(): void {
     this.form = new FormGroup({
-      Gender: new FormControl()
+      name: new FormControl('Jens'),
+      gender: new FormControl(),
+      eyeColor: new FormControl(),
     });
     this.isPersonEdit = true;
   }
