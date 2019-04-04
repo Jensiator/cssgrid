@@ -1,6 +1,8 @@
-@import "variables";
+@import '~normalize.css/normalize.css';
+@import "/base/variables";
+@import "/base/general";
+@import "/base/space";
 @import "layout";
-@import "general";
 @import "card";
 @import "list";
 @import "button";

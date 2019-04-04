@@ -1,12 +1,12 @@
 .btn{
-  border: none;
-  padding: 0.33em 1em;
+  border: 1px solid transparent;
+  padding: $input-padding-y $input-padding-x;
+  -webkit-appearance: none;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 0.1em 0.1em;
-  cursor: pointer;
+  font-size: $font-size;
+  margin: 0 0;
 }
 .btn-primary{
   background-color: $primary-color;
