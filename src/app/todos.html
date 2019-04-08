@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">
+            Todos
+        </div>
+        <div>
+            <button class="btn btn-primary">Add</button>
+        </div>
+    </div>
+    <div class="card-body">
+        <div *ngFor='let todo of $todos | async'>
+            <strong class="d-block">{{todo.title}}</strong>
+            {{todo.description}}
+        </div>
+    </div>
+</div>
