@@ -4,13 +4,32 @@
             Todos
         </div>
         <div>
-            <button class="btn btn-primary">Add</button>
+            <button class="btn btn-primary" *ngIf="!isEdit" (click)="add()">Add</button>
         </div>
     </div>
     <div class="card-body">
-        <div *ngFor='let todo of $todos | async'>
-            <strong class="d-block">{{todo.title}}</strong>
-            {{todo.description}}
-        </div>
+        <ul *ngIf="!isEdit">
+            <li *ngFor='let todo of $todos | async'>
+                <strong class="d-block">{{todo.title}}</strong>
+                {{todo.description}}
+            </li>
+        </ul>
+        <form [formGroup]="form" *ngIf="isEdit">
+            <div [error]="error" *ngIf="error"></div>
+            <div class="row">
+                <div class="col-12">
+                    <label class="required">Title</label>
+                    <input formControlName="title" class="form-control" type="text" />
+                </div>
+                <div class="col-12">
+                    <label>Description</label>
+                    <input formControlName="description" class="form-control" type="text" />
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary mr-3" type="submit" (click)="onSubmit()">Save</button>
+                    <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

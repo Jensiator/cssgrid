@@ -1,0 +1,5 @@
+<div class="error" *ngIf="error" (click)="onClick()">
+    <ng-container *ngIf="error.error">
+        {{error.error.message}}
+    </ng-container>
+</div>

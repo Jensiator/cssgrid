@@ -5,6 +5,7 @@ import { ModalService } from './modal/modal.service';
 import { ConfirmModal } from './modal/confirm.modal';
 import {ReactiveFormsModule} from '@angular/forms';
 import { AppButtonDirective } from './input/appButton.directive';
+import { ErrorMessage } from './input/error';
 @NgModule({
     imports: [
         CommonModule,
@@ -13,13 +14,15 @@ import { AppButtonDirective } from './input/appButton.directive';
     declarations: [
         ModalComponent,
         ConfirmModal,
-        AppButtonDirective
+        AppButtonDirective,
+        ErrorMessage
     ],
     exports: [
         ModalComponent,
         ConfirmModal,
         ReactiveFormsModule,
-        AppButtonDirective
+        AppButtonDirective,
+        ErrorMessage
     ],
     providers: [ModalService]
 })

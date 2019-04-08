@@ -9,6 +9,9 @@ export class AppService {
     public getTodos(): Observable<Array<Todo>> {
         return this.client.get<Array<Todo>>(AppService.TODOS);
     }
+    public postTodo(todo: Todo): Observable<any> {
+        return this.client.post(AppService.TODOS, todo);
+    }
 }
 
 export class Todo {
