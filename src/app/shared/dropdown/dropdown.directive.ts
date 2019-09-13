@@ -9,7 +9,7 @@ import { DropdownService } from './dropdown.service';
 export class Dropdown implements AfterContentInit, OnDestroy {
     private toggleSubscription: Subscription = new Subscription();
     private outSideSubscription: Subscription = new Subscription();
-    @ContentChild(DropdownToogle) ddToggle: DropdownToogle;
+    @ContentChild(DropdownToogle, { static: false }) ddToggle: DropdownToogle;
     @HostBinding('class.dropdown') dropDownClass = true;
     @HostBinding('class.opened') opened: boolean;
 
@@ -18,6 +18,7 @@ export class Dropdown implements AfterContentInit, OnDestroy {
 
     ngAfterContentInit(): void {
         this.toggleSubscription = this.ddToggle.clicked.subscribe(() => {
+            this.calcBoundary();
             this.opened = !this.opened;
             if (this.opened) {
                 this.outSideSubscription = this.dropDownService.getAppClick().subscribe((target: any) => {
@@ -32,7 +33,14 @@ export class Dropdown implements AfterContentInit, OnDestroy {
             }
         });
     }
-
+    private calcBoundary() {
+        const boundary = this.element.nativeElement.getBoundingClientRect();
+        const bottom = boundary.y + boundary.height;
+        const right = boundary.x + boundary.width;
+        console.log('WHat:', boundary);
+        console.log('window width:', window.innerWidth);
+        console.log('window height:', window.innerHeight);
+    }
     ngOnDestroy(): void {
         this.toggleSubscription.unsubscribe();
         this.outSideSubscription.unsubscribe();

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { AppService, Todo } from './app.service';
 import { Observable } from 'rxjs';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { REQUIRED_VALIDATOR } from '@angular/forms/src/directives/validators';
 
 @Component({
     selector: 'todos',

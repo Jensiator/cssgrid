@@ -1,7 +1,7 @@
 @import '~normalize.css/normalize.css';
-@import "/base/variables";
-@import "/base/general";
-@import "/base/space";
+@import "base/variables";
+@import "base/general";
+@import "base/space";
 @import "layout";
 @import "card";
 @import "list";
@@ -9,4 +9,4 @@
 @import "grid";
 @import "form";
 @import "modal";
-@import "/components/_dropdown"
+@import "components/_dropdown"
