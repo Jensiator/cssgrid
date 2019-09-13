@@ -1,0 +1,40 @@
+.dropdown {
+  &.opened {
+    .dropdown-menu {
+      display: block;
+    }
+  }
+  position: relative;
+  float: right;
+  &.left {
+    float: none;
+    .dropdown-menu {
+      right: auto;
+    }
+  }
+  .dropdown-menu {
+    display: none;
+    right: 0;
+    position: absolute;
+    background-color: $general-background;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    a,
+    button {
+      color: $body-color;
+      padding: $space-2 $space-3;
+      text-decoration: none;
+      display: block;
+      &:hover {
+        background-color: $grey;
+      }
+    }
+    button{
+        background-color: $general-background;
+        text-align: left;
+        width: 100%;
+        border:none;
+    }
+  }
+}

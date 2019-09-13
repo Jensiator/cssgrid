@@ -26,3 +26,44 @@ pre{
   display: block;
 }
 
+.statement-container{
+  text-align: center;
+}
+#statement{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #538231c7;
+  color:white;
+  padding:0.5em;
+}
+
+#statement:first-child{
+ //any font you like
+}
+#statement:last-child{
+  text-align: center;
+}
+
+#vision-table{
+  display:table;
+  margin:1.3509375vw 0;
+  border:solid .5px black; 
+  width:100%;
+  text-align:center;
+}
+#vision{
+  background-color:#538231c7;
+  color:white;
+  height:3.71385vw;
+  padding:1.00215vw 2.01vw;
+  line-height:1.5;
+  font-size:1.35vw;
+  display:table-cell;
+  vertical-align:middle;
+  position: relative;
+}
+.vision-left {
+  position: absolute;
+  left: 10px;
+}

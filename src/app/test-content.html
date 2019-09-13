@@ -1,8 +1,35 @@
 <h1>Main article area</h1>
+
+<div class="statement-content">
+  <div id="statement">
+    <div>Our Vision</div>
+    <div>Our Vision: A sustainable and healthy town of Weston, with engaged citizens committed<br>
+      to a thriving community, today and in the future.
+    </div>
+  </div>
+</div>
+<br>
+
+
+<br>
+
+<div id="vision-table">
+    <div id="vision"><span class="vision-left">Our Vision:</span> A sustainable and healthy town of                         Weston, with engaged citizens committed<br>
+                        to a thriving community, today and in the future.    </div>
+    </div>
 <p>In this layout, we display the areas in source order for any screen less
   that 500 pixels wide. We go to a two
   column layout, and then to a three column layout by redefining the grid, and the placement of items on the
   grid.</p>
+<br>
+<div dropDown>
+  <button dropDownToggle>DD</button>
+  <div class="dropdown-menu">
+    <button>Export</button>
+    <button>Something else</button>
+  </div>
+</div>
+<br>
 
 <div class="card">
   <div class="card-header">
@@ -45,7 +72,7 @@
         <div class="row">
           <div class="col-6">
             <label>Name</label>
-            <input formControlName="name" class="form-control" type="text"/>
+            <input formControlName="name" class="form-control" type="text" />
           </div>
           <div class="col-6">
             <label>Gender</label>
@@ -66,12 +93,13 @@
             <input formControlName="eyeColor" class="form-control" type="text" placeholder="Pick color" />
           </div>
           <div class="col-12">
-              <button class="btn btn-primary mr-3" type="submit" (click)="onSubmit()">Save</button>
-              <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
-            </div>
+            <button class="btn btn-primary mr-3" type="submit" (click)="onSubmit()">Save</button>
+            <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+          </div>
         </div>
       </form>
       <!-- <pre>{{form.value|json}}</pre> -->
+
     </ng-container>
   </div>
   <button class="btn btn-primary mr-3" type="button" (click)="openModal()">Open Modal</button>

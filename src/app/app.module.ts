@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { Todos } from './todos';
 import { AppService } from './app.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DropdownService } from './shared/dropdown/dropdown.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     SharedModule
   ],
-  providers: [AppService],
+  providers: [AppService, DropdownService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
