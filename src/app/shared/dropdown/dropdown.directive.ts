@@ -9,7 +9,7 @@ import { DropdownService } from './dropdown.service';
 export class Dropdown implements AfterContentInit, OnDestroy {
     private toggleSubscription: Subscription = new Subscription();
     private outSideSubscription: Subscription = new Subscription();
-    @ContentChild(DropdownToogle, { static: false }) ddToggle: DropdownToogle;
+    @ContentChild(DropdownToogle) ddToggle: DropdownToogle;
     @HostBinding('class.dropdown') dropDownClass = true;
     @HostBinding('class.opened') opened: boolean;
 
